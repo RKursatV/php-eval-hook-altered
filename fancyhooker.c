@@ -10,7 +10,7 @@
 static zend_op_array* (*old_compile_string)(zend_string *source_string, const char *filename);
 
 
-static zend_op_array* funnyh00k3r_compile_string(zend_string *source_string, const char *filename)
+static zend_op_array* fancyhooker_compile_string(zend_string *source_string, const char *filename)
 {
 	zend_op_array *op_array = NULL;
 	int op_compiled = 0;
@@ -49,30 +49,30 @@ static zend_op_array* funnyh00k3r_compile_string(zend_string *source_string, con
 }
 
 
-PHP_MINIT_FUNCTION(funnyh00k3r)
+PHP_MINIT_FUNCTION(fancyhooker)
 {
 	return SUCCESS;
 }
 
-PHP_MSHUTDOWN_FUNCTION(funnyh00k3r)
+PHP_MSHUTDOWN_FUNCTION(fancyhooker)
 {
 	return SUCCESS;
 }
 
-PHP_RINIT_FUNCTION(funnyh00k3r)
+PHP_RINIT_FUNCTION(fancyhooker)
 {
 	old_compile_string = zend_compile_string;
-	zend_compile_string = funnyh00k3r_compile_string;
+	zend_compile_string = fancyhooker_compile_string;
 	return SUCCESS;
 }
 
-PHP_RSHUTDOWN_FUNCTION(funnyh00k3r)
+PHP_RSHUTDOWN_FUNCTION(fancyhooker)
 {
 	zend_compile_string = old_compile_string;
 	return SUCCESS;
 }
 
-PHP_MINFO_FUNCTION(funnyh00k3r)
+PHP_MINFO_FUNCTION(fancyhooker)
 {
 	php_info_print_table_start();
 	php_info_print_table_row(2, "eval() hooking", "enabled");
@@ -81,22 +81,22 @@ PHP_MINFO_FUNCTION(funnyh00k3r)
 }
 
 
-zend_function_entry funnyh00k3r_functions[] = {
+zend_function_entry fancyhooker_functions[] = {
 	ZEND_FE_END
 };
 
-zend_module_entry funnyh00k3r_module_entry = {
+zend_module_entry fancyhooker_module_entry = {
 	STANDARD_MODULE_HEADER,
-	"funnyh00k3r",
-	funnyh00k3r_functions,
-	PHP_MINIT(funnyh00k3r),
-	PHP_MSHUTDOWN(funnyh00k3r),
-	PHP_RINIT(funnyh00k3r),
-	PHP_RSHUTDOWN(funnyh00k3r),
-	PHP_MINFO(funnyh00k3r),
+	"fancyhooker",
+	fancyhooker_functions,
+	PHP_MINIT(fancyhooker),
+	PHP_MSHUTDOWN(fancyhooker),
+	PHP_RINIT(fancyhooker),
+	PHP_RSHUTDOWN(fancyhooker),
+	PHP_MINFO(fancyhooker),
 	"0.0.1-dev",
 	STANDARD_MODULE_PROPERTIES
 };
 
-ZEND_GET_MODULE(funnyh00k3r)
+ZEND_GET_MODULE(fancyhooker)
 

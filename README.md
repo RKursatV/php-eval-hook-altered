@@ -2,8 +2,8 @@
 
 A PHP extension for hooking `eval()`. Useful for dumping eval-obfuscated code. The extension is expected to work with PHP 7.x in general. May work with PHP 5.x but is untested.
 
-## Why funnyh00k3r?
-After I see some many obfuscators checking presence of an extension `evalhook` or variants as a protection, I bypassed it by changing the name of the extension to `funnyh00k3r`
+## Why fancyhooker?
+After I see some many obfuscators checking presence of an extension `evalhook` or variants as a protection, I bypassed it by changing the name of the extension to `fancyhooker`
 
 ## Compiling steps
 
@@ -31,7 +31,7 @@ A precompiled extension can be downloaded from [releases](https://github.com/ext
 4. Build the extension. `make install` copies the `.so` to the appropriate location.
 
     ```
-    $ ./configure --enable-funnyh00k3r
+    $ ./configure --enable-fancyhooker
 
     $ make
 
@@ -49,20 +49,20 @@ A precompiled extension can be downloaded from [releases](https://github.com/ext
     Loaded Configuration File => /etc/php/7.2/cli/php.ini
     ```
 
-2. Edit *php.ini* and add the line `extension=funnyh00k3r.so` at the end.
+2. Edit *php.ini* and add the line `extension=fancyhooker.so` at the end.
     ```
-    $ echo "extension=funnyh00k3r.so" >> /etc/php/7.2/cli/php.ini
+    $ echo "extension=fancyhooker.so" >> /etc/php/7.2/cli/php.ini
     ```
 
 3. Ensure that the extension is properly loaded.
     ```
-    $ php -r 'print_r(get_loaded_extensions());' | grep funnyh00k3r
-        [14] => funnyh00k3r
+    $ php -r 'print_r(get_loaded_extensions());' | grep fancyhooker
+        [14] => fancyhooker
     ```
 
     ```
     $ php -r 'phpinfo();' | grep eval
-    funnyh00k3r
+    fancyhooker
     eval() hooking => enabled
     callback function => __eval
     ```
