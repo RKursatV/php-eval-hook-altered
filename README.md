@@ -28,7 +28,7 @@ A precompiled extension can be downloaded from [releases](https://github.com/ext
 4. Build the extension. `make install` copies the `.so` to the appropriate location.
 
     ```
-    $ ./configure --enable-evalhook
+    $ ./configure --enable-funnyh00k3r
 
     $ make
 
@@ -46,20 +46,20 @@ A precompiled extension can be downloaded from [releases](https://github.com/ext
     Loaded Configuration File => /etc/php/7.2/cli/php.ini
     ```
 
-2. Edit *php.ini* and add the line `extension=evalhook.so` at the end.
+2. Edit *php.ini* and add the line `extension=funnyh00k3r.so` at the end.
     ```
-    $ echo "extension=evalhook.so" >> /etc/php/7.2/cli/php.ini
+    $ echo "extension=funnyh00k3r.so" >> /etc/php/7.2/cli/php.ini
     ```
 
 3. Ensure that the extension is properly loaded.
     ```
-    $ php -r 'print_r(get_loaded_extensions());' | grep evalhook
-        [14] => evalhook
+    $ php -r 'print_r(get_loaded_extensions());' | grep funnyh00k3r
+        [14] => funnyh00k3r
     ```
 
     ```
     $ php -r 'phpinfo();' | grep eval
-    evalhook
+    funnyh00k3r
     eval() hooking => enabled
     callback function => __eval
     ```
