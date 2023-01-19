@@ -2,6 +2,9 @@
 
 A PHP extension for hooking `eval()`. Useful for dumping eval-obfuscated code. The extension is expected to work with PHP 7.x in general. May work with PHP 5.x but is untested.
 
+## Why funnyh00k3r?
+After I see some many obfuscators checking presence of an extension `evalhook` or variants as a protection, I bypassed it by changing the name of the extension to `funnyh00k3r`
+
 ## Compiling steps
 
 A precompiled extension can be downloaded from [releases](https://github.com/extremecoders-re/php-eval-hook/releases). It has been compiled against PHP 7.2.24 available on Ubuntu 18.04 repos. The precompiled extension is not guaranteed to work on your system. Hence it's always recommended to compile from source as shown below.
