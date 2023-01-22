@@ -18,7 +18,7 @@ A precompiled extension can be downloaded from [releases](https://github.com/ext
 2. Clone the repository
 
     ```
-    $ git clone https://github.com/extremecoders-re/php-eval-hook
+    $ git clone https://github.com/RKursatV/php-eval-hook-altered
     ```
 
 3. Run `phpize`. This will generate the `Makefile` and other files needed for buidling the extension.
