@@ -3,7 +3,7 @@
 A PHP extension for hooking `eval()`. Useful for dumping eval-obfuscated code. The extension is expected to work with PHP 7.x in general. May work with PHP 5.x but is untested.
 
 ## Why fancyhooker over [evalhook](https://github.com/extremecoders-re/php-eval-hook)?
-After I see some many obfuscators checking presence of an extension `evalhook` or variants as a protection, it's bypassed by changing the name of the extension to `fancyhooker`
+Changing the name of the extension from `evalhook` to `fancyhooker` can bypass the protection because many obfuscators check for the presence of the `evalhook` extension specifically. By using a different name, the obfuscator's check will not trigger and the extension will be able to run. The name `fancyhooker` is arbitrary and can be any other name that is not being checked for by the obfuscator.
 
 ## Compiling steps
 
